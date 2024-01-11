@@ -1,0 +1,14 @@
+# tiledb-py 0.25.0 was merged without bumping the tiledb pin to 2.19
+# https://github.com/conda-forge/tiledb-py-feedstock/pull/191
+#
+# This was subsequently fixed for build number 1
+# https://github.com/conda-forge/tiledb-py-feedstock/pull/193
+if:
+  name: tiledb-py
+  version: "0.25.0"
+  build_number: 0
+  timestamp_lt: 1705003017000
+then:
+  - replace_depends:
+      old: "tiledb >=2.18.0,<2.19"
+      new: "tiledb >=2.19.0,<2.20"
